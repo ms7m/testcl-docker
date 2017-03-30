@@ -1,9 +1,9 @@
 Param(
   [Parameter(Mandatory=$True,Position=1)]
   [string]$name,
-  [string]$version
+  [string]$tag
 )
 
 docker build --no-cache -t $name .
 
-if ($version) { docker tag $name $name':'$version }
+if ($tag) { docker tag $name $name':'$tag }

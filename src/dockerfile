@@ -21,7 +21,7 @@ RUN unzip /tmp/${JTCL_RELEASE}-bin.zip
 RUN rm /tmp/${JTCL_RELEASE}-bin.zip
 
 RUN echo '# Get JTcl-iRule extension to JTcl'
-ADD https://github.com/downloads/landro/TesTcl/jtcl-irule.jar /${JTCL_RELEASE}/
+ADD https://bintray.com/landro/maven/download_file?file_path=com/testcl/jtcl-irule/0.9/jtcl-irule-0.9.jar /${JTCL_RELEASE}/
 RUN echo '# Patch jtcl shell script file'
 RUN echo 'exec java -DTCLLIBPATH="$TCLLIBPATH" -cp "$CLASSPATH" $JAVA_OPTS tcl.lang.Shell ${1+"$@"}' > /${JTCL_RELEASE}/jtcl
 

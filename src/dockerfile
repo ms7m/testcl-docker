@@ -14,6 +14,7 @@ RUN echo '# Installing some stuff'
 RUN apk update
 RUN apk add unzip
 RUN apk add sed
+RUN apk add bash
 
 RUN echo '# Get JTcl'
 ADD https://github.com/jtcl-project/jtcl/releases/download/${JTCL_VERSION}-release/${JTCL_RELEASE}-bin.zip /tmp/
